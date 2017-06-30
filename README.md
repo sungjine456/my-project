@@ -16,5 +16,7 @@
 ```
 ### 3
 ```
-1. HTML Template 추가
+1. HTML Template, JPA, H2 DB 추가
+2. 회원 가입, 회원정보 수정
+3. HTML 중복 제거
 ```
