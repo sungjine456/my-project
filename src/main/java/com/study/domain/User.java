@@ -33,11 +33,15 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public long getId(){
-		return id;
+	
+	public boolean mathId(long id){
+		return this.id == id;
 	}
-	public String getPassword(){
-		return password;
+	public boolean matchPassword(String password){
+		if(password == null){
+			return false;
+		}
+		return this.password.equals(password);
 	}
 
 	public void update(User updateUser) {
