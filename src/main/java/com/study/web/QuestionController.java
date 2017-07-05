@@ -35,7 +35,7 @@ public class QuestionController {
 		
 		User sessionUser = HttpSessionUtils.getUserFromSession(session);
 		System.out.println(sessionUser);
-		Question newQuestion = new Question(sessionUser.getUserId(), title, contents);
+		Question newQuestion = new Question(sessionUser, title, contents);
 		questionRepository.save(newQuestion);
 		return "redirect:/";
 	}
