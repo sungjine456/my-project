@@ -1,6 +1,7 @@
 package com.study.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -35,6 +36,13 @@ public class Answer {
 		this.contents = contents;
 		this.question = question;
 		createDate = LocalDateTime.now();
+	}
+	
+	public String getFormattedCreateDate(){
+		if(createDate == null){
+			return "";
+		}
+		return createDate.format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss"));
 	}
 	
 	@Override

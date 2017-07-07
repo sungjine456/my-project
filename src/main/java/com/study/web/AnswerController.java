@@ -23,7 +23,7 @@ public class AnswerController {
 	@PostMapping("")
 	public String create(@PathVariable long questionId, String contents, HttpSession session){
 		if(!HttpSessionUtils.isLoginUser(session)){
-			return "/users/loginForm";
+			return "redirect:/users/loginForm";
 		}
 		
 		Answer answer = new Answer(HttpSessionUtils.getUserFromSession(session), questionRepository.findOne(questionId), contents);
