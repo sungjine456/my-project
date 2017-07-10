@@ -25,7 +25,6 @@ public class ApiAnswerController {
 		if(!HttpSessionUtils.isLoginUser(session)){
 			return null;
 		}
-		
 		Answer answer = new Answer(HttpSessionUtils.getUserFromSession(session), questionRepository.findOne(questionId), contents);
 		return answerRepository.save(answer);
 	}
