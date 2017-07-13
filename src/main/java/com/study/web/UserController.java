@@ -71,7 +71,7 @@ public class UserController {
 			return "redirect:/users/loginForm";
 		}
 		User sessionedUser = HttpSessionUtils.getUserFromSession(session);
-		if(sessionedUser.mathId(id)){
+		if(sessionedUser.matchId(id)){
 			throw new IllegalStateException("자신의 정보만 수정할 수 있습니다.");
 		}
 		
@@ -85,7 +85,7 @@ public class UserController {
 			return "redirect:/users/loginForm";
 		}
 		User sessionedUser = HttpSessionUtils.getUserFromSession(session);
-		if(sessionedUser.mathId(id)){
+		if(sessionedUser.matchId(id)){
 			throw new IllegalStateException("자신의 정보만 수정할 수 있습니다.");
 		}
 		
